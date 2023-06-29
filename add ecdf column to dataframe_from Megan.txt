@@ -1,0 +1,9 @@
+#add column of ECDF function
+
+fun.ecdf<-ecdf(No_UV_mice_allmonths$structure_volume) #make a function that applies ecdf to your data
+
+my.ecdf<-fun.ecdf(sort(No_UV_mice_allmonths$structure_volume)) # apply that function to a sorted list of your data to give the cumulative probabilities 
+
+No_UV_mice_allmonths$distribution_volume<-my.ecdf #add the cumulative probabilities to your data frame
+
+No_UV_mice_allmonths
